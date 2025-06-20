@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Your Name - Portfolio</title>
+<link
+  href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+  rel="stylesheet"
+/>
+<style>
+  /* Variables */
+  :root {
+    --primary-color: rgb(107, 164, 159);
+    --secondary-color: rgb(113, 205, 194);
+    --text-color: #000;
+    --shadow-color: rgba(0, 0, 0, 0.15);
+    --border-radius: 10px;
+    --font-family: Arial, Helvetica, sans-serif;
+  }
+
+  /* Reset */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font-family);
+  }
+
+  body {
+    background: #fff;
+    color: var(--text-color);
+    line-height: 1.6;
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  /* Container */
+  .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+  }
+
+  /* ====== Header / About Section ====== */
+  header {
+    background: var(--primary-color);
+    padding: 40px 0;
+    text-align: center;
+    color: var(--text-color);
+    border-radius: var(--border-radius);
+    box-shadow: 0 8px 16px var(--shadow-color);
+  }
+
+  header h1 {
+    font-size: 2.8rem;
+    margin-bottom: 10px;
+  }
+
+  header p {
+    font-size: 1.2rem;
+  }
+
+  /* ====== Resume Section ====== */
+  .resume_section {
+    margin: 40px 0;
+  }
+
+  .resume_cards {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .resume_card {
+    background: #f9f9f9;
+    box-shadow: 0 8px 16px var(--shadow-color);
+    border-radius: var(--border-radius);
+    padding: 20px;
+    flex: 1 1 300px;
+    min-width: 280px;
+  }
+
+  .resume_card h2 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+  }
+
+  /* Skill Bars */
+  .skill_bar {
+    background: #ddd;
+    border-radius: 7px;
+    height: 10px;
+    margin-bottom: 15px;
+    overflow: hidden;
+  }
+
+  .skill_fill {
+    height: 100%;
+    border-radius: 7px;
+    background-color: var(--primary-color);
+  }
+
+  /* Skill widths (customize for you) */
+  .skill-html { width: 85%; }
+  .skill-css { width: 75%; }
+  .skill-js { width: 40%; }
+  .skill-cpp { width: 50%; }
+  .skill-python { width: 45%; }
+  .skill-android { width: 60%; }
+  .skill-node { width: 20%; }
+
+  /* ====== Services Section ====== */
+  .service_section {
+    margin: 40px 0;
+  }
+
+  .service_cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+  }
+
+  .service_card {
+    background: #fff;
+    box-shadow: 0 8px 16px var(--shadow-color);
+    border-radius: var(--border-radius);
+    width: 280px;
+    padding: 60px 20px 20px;
+    position: relative;
+    text-align: center;
+  }
+
+  .service_icon {
+    position: absolute;
+    top: -35px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #fff;
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    border: 2px solid var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-color);
+    font-size: 28px;
+  }
+
+  .service_card h3 {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+  }
+
+  .service_card p {
+    color: #555;
+  }
+
+  /* ====== Testimonial Section ====== */
+  .testimonial_section {
+    background-image: url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1350&q=80');
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    padding: 50px 20px;
+    text-align: center;
+    border-radius: var(--border-radius);
+    box-shadow: 0 8px 16px var(--shadow-color);
+    margin: 40px 0;
+  }
+
+  .testimonial_image {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin: 0 auto 20px;
+    object-fit: cover;
+    border: 3px solid var(--secondary-color);
+  }
+
+  .testimonial_section p {
+    font-size: 1rem;
+    font-style: italic;
+    max-width: 700px;
+    margin: 0 auto 15px;
+  }
+
+  .testimonial_section h3 {
+    font-weight: bold;
+    font-size: 1.3rem;
+  }
+
+  .testimonial_section h5 {
+    font-style: italic;
+    margin-top: 10px;
+    font-weight: 400;
+  }
+
+  /* ====== Blog Section ====== */
+  .blog_section {
+    margin: 40px 0;
+  }
+
+  .blog_section h2 {
+    text-align: center;
+    color: var(--primary-color);
+    margin-bottom: 30px;
+  }
+
+  .blog_cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+
+  .blog_card {
+    background: #fff;
+    box-shadow: 0 8px 16px var(--shadow-color);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .blog_card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+  }
+
+  .blog_content {
+    padding: 15px;
+  }
+
+  .blog_content h3 {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+  }
+
+  .blog_content p {
+    font-size: 0.9rem;
+    color: #555;
+  }
+
+  /* ====== Contact Section ====== */
+  .contact_section {
+    background: var(--primary-color);
+    padding: 40px 20px;
+    border-radius: var(--border-radius);
+    color: var(--text-color);
+    box-shadow: 0 8px 16px var(--shadow-color);
+    margin: 40px 0;
+  }
+
+  .contact_container {
+    max-width: 900px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: center;
+  }
+
+  .contact_details,
+  .contact_form {
+    flex: 1 1 350px;
+  }
+
+  .contact_details h2 {
+    margin-bottom: 20px;
+  }
+
+  .social_icons {
+    display: flex;
+    gap: 20px;
+    justify-content: flex-start;
+  }
+
+  .social_icon {
+    width: 50px;
+    height: 50px;
+    background: var(--secondary-color);
+    border-radius: 50%;
+    box-shadow: 0 8px 16px var(--shadow-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+
+  .social_icon:hover {
+    background: #089f94;
+  }
+
+  form {
+    background: #fff;
+    padding: 30px;
+    border-radius: var(--border-radius);
+    box-shadow: 0 8px 16px var(--shadow-color);
+  }
+
+  form h3 {
+    margin-bottom: 20px;
+    color: var(--secondary-color);
+    text-align: center;
+  }
+
+  form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+  }
+
+  form input,
+  form textarea {
+    width: 100%;
+    padding: 10px 8px;
+    margin-bottom: 15px;
+    border: 2px solid var(--secondary-color);
+    border-radius: 5px;
+    outline: none;
+    resize: vertical;
+    font-size: 1rem;
+  }
+
+  form button {
+    background: var(--secondary-color);
+    color: #fff;
+    border: none;
+    padding: 12px 20px;
+    font-size: 1rem;
+    border-radius: 7px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    width: 100%;
+  }
+
+  form button:hover {
+    background: #089f94;
+  }
+
+  /* ====== Responsive ====== */
+  @media (max-width: 900px) {
+    .resume_cards,
+    .service_cards,
+    .blog_cards {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .contact_container {
+      flex-direction: column;
+    }
+  }
+
+  @media (max-width: 500px) {
+    header h1 {
+      font-size: 2rem;
+    }
+
+    header p {
+      font-size: 1rem;
+    }
+  }
+</style>
+</head>
+<body>
+
+  <!-- Header / About -->
+  <header>
+    <div class="container">
+      <h1>Your Name</h1>
+      <p>Passionate Developer & Designer | Your Location</p>
+    </div>
+  </header>
+
+  <!-- Resume Section -->
+  <section class="resume_section container">
+    <h2 style="text-align:center; color: var(--primary-color); margin-bottom: 30px;">Skills</h2>
+    <div class="resume_cards">
+      <div class="resume_card">
+        <h2>HTML</h2>
+        <div class="skill_bar"><div class="skill_fill skill-html"></div></div>
+      </div>
+      <div class="resume_card">
+        <h2>CSS</h2>
+        <div class="skill_bar"><div class="skill_fill skill-css"></div></div>
+      </div>
+      <div class="resume_card">
+        <h2>JavaScript</h2>
+        <div class="skill_bar"><div class="skill_fill skill-js"></div></div>
+      </div>
+      <div class="resume_card">
+        <h2>C++</h2>
+        <div class="skill_bar"><div class="skill_fill skill-cpp"></div></div>
+      </div>
+      <div class="resume_card">
+        <h2>Python</h2>
+        <div class="skill_bar"><div class="skill_fill skill-python"></div></div>
+      </div>
+      <div class="resume_card">
+        <h2>Android</h2>
+        <div class="skill_bar"><div class="skill_fill skill-android"></div></div>
+      </div>
+      <div class="resume_card">
+        <h2>Node.js</h2>
+        <div class="skill_bar"><div class="skill_fill skill-node"></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="service_section container">
+    <h2 style="text-align:center; color: var(--primary-color); margin-bottom: 30px;">Services</h2>
+    <div class="service_cards">
+      <div class="service_card">
+        <div class="service_icon"><i class="bx bx-code"></i></div>
+        <h3>Web Development</h3>
+        <p>Building responsive and modern websites tailored to your needs.</p>
+      </div>
+      <div class="service_card">
+        <div class="service_icon"><i class="bx bx-paint"></i></div>
+        <h3>UI/UX Design</h3>
+        <p>Designing engaging and user-friendly interfaces for apps and websites.</p>
+      </div>
+      <div class="service_card">
+        <div class="service_icon"><i class="bx bx-mobile-alt"></i></div>
+        <h3>Mobile App Development</h3>
+        <p>Creating mobile applications for Android platforms with excellent performance.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonial Section -->
+  <section class="testimonial_section">
+    <div class="container">
+      <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Client Photo" class="testimonial_image" />
+      <p>"Working with Your Name was an absolute pleasure! The projects were delivered on time and the quality was exceptional."</p>
+      <h3>John Doe</h3>
+      <h5>CEO, Company Name</h5>
+    </div>
+  </section>
+
+  <!-- Blog Section -->
+  <section class="blog_section container">
+    <h2>Latest Blogs</h2>
+    <div class="blog_cards">
+      <article class="blog_card">
+        <img src="https://source.unsplash.com/300x180/?technology" alt="Blog 1" />
+        <div class="blog_content">
+          <h3>Understanding Responsive Design</h3>
+          <p>Learn the essentials of creating responsive web layouts that work on all devices.</p>
+        </div>
+      </article>
+      <article class="blog_card">
+        <img src="https://source.unsplash.com/300x180/?coding" alt="Blog 2" />
+        <div class="blog_content">
+          <h3>JavaScript Tips & Tricks</h3>
+          <p>Boost your JS skills with these practical tips and best practices.</p>
+        </div>
+      </article>
+      <article class="blog_card">
+        <img src="https://source.unsplash.com/300x180/?app" alt="Blog 3" />
+        <div class="blog_content">
+          <h3>Building Android Apps</h3>
+          <p>A step-by-step guide to getting started with Android app development.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact_section">
+    <div class="contact_container">
+      <div class="contact_details">
+        <h2>Contact Me</h2>
+        <div class="social_icons">
+          <div class="social_icon"><i class="bx bxl-facebook"></i></div>
+          <div class="social_icon"><i class="bx bxl-twitter"></i></div>
+          <div class="social_icon"><i class="bx bxl-linkedin"></i></div>
+          <div class="social_icon"><i class="bx bxl-github"></i></div>
+        </div>
+      </div>
+      <div class="contact_form">
+        <form action="#" method="POST">
+          <h3>Send a Message</h3>
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" placeholder="Your Name" required />
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="Your Email" required />
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
+          <button type="submit">Send</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>
