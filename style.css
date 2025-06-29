@@ -134,7 +134,7 @@ header h1 {
 }
 /* Home section  */
 .Home{
-  background-image: url(assets/Home.jpg);
+  background-image: url(assets/bg1.jpg);
   background-size: cover;
   background-position: center;
   height: 100vh;width: 100%;
@@ -174,7 +174,7 @@ header h1 {
 .Intro p{
   font-size: 2rem;
   font-weight: bold;
-  background-image: url('assets/bg1.webp');
+  background-image: url('assets/bg1.jpg');
   background-position: center;
   /* -webkit-background-clip: text; */
   background-clip: text;
@@ -228,12 +228,12 @@ header h1 {
 
 /* about section  */
 .about-section {
-  background-image: url(assets/bg1.webp);
+  background-image: url(assets/bg1.jpg);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   padding: 80px 20px;
-  height: 90vh;
+  height: 95vh;
   position: relative;
   font-family: Arial, sans-serif;
 }
@@ -338,7 +338,7 @@ header h1 {
 
 /* resume section  */
 .resume_section {
-  background-image: url('assets/H1.jpg');
+  background-image: url('assets/bg1.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   height: 90vh;
@@ -347,7 +347,7 @@ header h1 {
 }
 
 .head h2 {
-  margin-top: 150px;
+  margin-top: 290px;
   text-align: center;
   font-size: 2rem;
   color: black;
@@ -456,7 +456,7 @@ header h1 {
 }
 
 .mid_section {
-  background-image: url(assets/5651989.webp);
+  background-image: url(assets/bg1.jpg);
   background-size: cover;
   /* background: gray; */
   padding: 60px 0;
@@ -502,10 +502,10 @@ header h1 {
 }
 /* service section  */
 .service_section {
-  background-image: url(assets/H1.jpg);
+  background-image: url(assets/bg1.jpg);
   background-size: cover;
   padding-top: 15rem;
-  height: 70vh;
+  height: 80vh;
   /* padding: 60px 0; */
   /* background: #0e0e0e; */
   text-align: center;
@@ -569,11 +569,11 @@ header h1 {
 }
 /* my blogs  */
 .blog_section {
-  background-image: url(assets/bg1.webp);
+  background-image: url(assets/bg1.jpg);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 90vh;
+  height: 94vh;
   padding-top: 12rem;
   position: relative;
   font-family: Arial, sans-serif;
